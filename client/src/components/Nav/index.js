@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
     <nav>
-      <a href='/'>Search</a>
+      <ul>
+        <li>
+          <Link to='/search'>Search</Link>
+        </li>
+        <li>
+          <Link to='/saved'>Saved</Link>
+        </li>
+      </ul>
     </nav>
   );
 }
