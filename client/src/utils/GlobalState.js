@@ -38,7 +38,7 @@ const reducer = (state, action) => {
     case ADD_SAVED:
       return {
         ...state,
-        savedBooks: [action.book, book.favorites],
+        savedBooks: [action.book, ...state.savedBooks],
         loading: false,
       };
 
