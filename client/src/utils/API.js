@@ -2,15 +2,15 @@ import axios from 'axios';
 
 export default {
   getBooks: function () {
-    return axios.get('/api/posts');
+    return axios.get('/api/books');
   },
   getBook: function (id) {
-    return axios.get('/api/posts/' + id);
+    return axios.get('/api/books/' + id);
   },
   deleteBook: function (id) {
-    return axios.delete('/api/posts/' + id);
+    return axios.delete('/api/book/' + id);
   },
   saveBook: function (bookData) {
-    return axios.post('/api/posts', bookData);
+    return axios.post('/api/books', bookData);
   },
 };
