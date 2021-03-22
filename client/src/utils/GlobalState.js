@@ -13,8 +13,48 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'AN_ACTION':
-      return state;
+    case SET_CURRENT_BOOK:
+      return {
+        ...state,
+        currentBook: action.book,
+        loading: false,
+      };
+
+    case ADD_BOOK:
+      return {
+        ...state,
+        books: [action.book, ...state.books],
+        loading: false,
+      };
+
+    case REMOVE_BOOK:
+      return {
+        ...state,
+        books: state.books.filter((book) => {
+          return book._id !== action._id;
+        }),
+      };
+
+    case ADD_SAVED:
+      return {
+        ...state,
+        savedBooks: [action.book, book.favorites],
+        loading: false,
+      };
+
+    case REMOVE_SAVED:
+      return {
+        ...state,
+        savedBooks: state.savedBooks.filter((book) => {
+          return book._id !== action._id;
+        }),
+      };
+
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
 
     default:
       return state;
