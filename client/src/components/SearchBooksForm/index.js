@@ -64,11 +64,12 @@ function SearchBooksForm() {
           }) => {
             return (
               <div className='card'>
-                {/* <img
+                <img
                   src={imageLinks.thumbnail}
                   className='card-img-top'
                   alt={title}
-                /> */}
+                  style={{ width: '20%' }}
+                />
                 <div className='card-body'>
                   <h5 className='card-title'>
                     {title} by {authors}
