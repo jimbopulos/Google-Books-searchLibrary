@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import './style.css';
 // import { useStoreContext } from '../../utils/GlobalState';
 import API from '../../utils/API';
-import { Input, FormBtn } from '../Form/index';
+// import { Input, FormBtn } from '../Form/index';
 
 function SearchBooksForm() {
   const [books, setBooks] = useState([]);
@@ -20,8 +21,10 @@ function SearchBooksForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await API.searchBooks(booksSearch);
-      setBooks(data);
+      const {
+        data: { items },
+      } = await API.searchBooks(booksSearch);
+      setBooks(items);
       console.log();
     } catch (err) {
       console.log(err);
@@ -29,19 +32,56 @@ function SearchBooksForm() {
   };
 
   const getBooks = async () => {
-    const { data } = await API.searchBooks();
+    const {
+      data: { items },
+    } = await API.searchBooks();
 
-    setBooks(data);
+    setBooks(items);
+    console.log(items);
   };
 
   return (
     <div>
       <form>
-        <input type='text' onChange={handleInputChange} />
+        <input
+          type='text'
+          placeholder='Search for books'
+          onChange={handleInputChange}
+        />
         <button type='submit' onClick={handleSubmit}>
           Search
         </button>
       </form>
+      <div>
+        {books.map(
+          ({
+            volumeInfo: { title, authors, description, infoLink, imageLinks },
+          }) => {
+            return (
+              <div className='card'>
+                <img
+                  src={imageLinks.thumbnail}
+                  className='card-img-top'
+                  alt={title}
+                />
+                <div className='card-body'>
+                  <h5 className='card-title'>
+                    {title} by {authors}
+                  </h5>
+                  <span>
+                    <button className='btn btn-outline-primary'>View</button>
+                    <button className='btn btn-outline-success'>Save</button>
+                  </span>
+                  <p className='card-text'>{description}</p>
+                  <a href={infoLink} className='btn btn-primary'>
+                    Find it in the Google Books store
+                  </a>
+                </div>
+              </div>
+            );
+          }
+        )}
+      </div>
     </div>
   );
 }

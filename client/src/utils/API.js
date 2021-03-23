@@ -6,6 +6,9 @@ export default {
       `https://www.googleapis.com/books/v1/volumes?q=${userInput}`
     );
   },
+  getBooks: function () {
+    return axios.get('/api/books');
+  },
   getSavedBooks: function () {
     return axios.get('/api/books');
   },
