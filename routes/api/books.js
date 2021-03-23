@@ -6,7 +6,6 @@ router.route('/').get(booksController.findAll).post(booksController.create);
 router
   .route('/:id')
   .get(booksController.findById)
-  .put(booksController.update)
-  .deleted(booksController.remove);
+  .delete(booksController.remove);
 
 module.exports = router;
