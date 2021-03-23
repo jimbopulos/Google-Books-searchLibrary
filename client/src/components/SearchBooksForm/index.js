@@ -42,13 +42,18 @@ function SearchBooksForm() {
 
   return (
     <div>
-      <form>
+      <form className='form-inline'>
         <input
           type='text'
           placeholder='Search for books'
+          className='form-control'
           onChange={handleInputChange}
         />
-        <button type='submit' onClick={handleSubmit}>
+        <button
+          type='submit'
+          className='btn btn-primary'
+          onClick={handleSubmit}
+        >
           Search
         </button>
       </form>
@@ -59,11 +64,11 @@ function SearchBooksForm() {
           }) => {
             return (
               <div className='card'>
-                <img
+                {/* <img
                   src={imageLinks.thumbnail}
                   className='card-img-top'
                   alt={title}
-                />
+                /> */}
                 <div className='card-body'>
                   <h5 className='card-title'>
                     {title} by {authors}
