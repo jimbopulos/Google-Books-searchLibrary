@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import {
-  ADD_BOOK,
+  SEARCH_BOOK,
   REMOVE_BOOK,
   SET_CURRENT_BOOK,
   LOADING,
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         loading: false,
       };
 
-    case ADD_BOOK:
+    case SEARCH_BOOK:
       return {
         ...state,
         books: [action.book, ...state.books],
@@ -64,6 +64,7 @@ const reducer = (state, action) => {
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     books: [],
+    title: '',
     currentBook: {
       id: 0,
       title: '',
