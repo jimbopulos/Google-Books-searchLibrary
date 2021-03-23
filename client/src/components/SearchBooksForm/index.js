@@ -30,7 +30,6 @@ function SearchBooksForm() {
   const getBooks = async () => {
     const { data } = await API.searchBooks();
 
-    // console.log(data);
     setBooks(data);
   };
 
