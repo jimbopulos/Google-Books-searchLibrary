@@ -1,10 +1,18 @@
 import React from 'react';
+import { Container, Row, Col } from '../components/Grid';
+import Jumbotron from '../components/Jumbotron';
 
 const Saved = () => {
   return (
-    <div>
-      <h1>This is the saved page, bloopy bloop</h1>
-    </div>
+    <Container>
+      <Row>
+        <Col size='md-12'>
+          <Jumbotron>
+            <h1>This is the saved page, bloopy bloop</h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
