@@ -9,7 +9,7 @@ const Saved = () => {
       <Row>
         <Col size='md-12'>
           <Jumbotron>
-            <h1>Saved Books</h1>
+            <h1>Google Search Library</h1>
           </Jumbotron>
         </Col>
       </Row>

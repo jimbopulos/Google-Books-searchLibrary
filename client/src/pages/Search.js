@@ -6,24 +6,20 @@ import Jumbotron from '../components/Jumbotron';
 
 const Search = () => {
   return (
-    <Container fluid>
-      <Jumbotron>
-        <h1>Search Books</h1>
-      </Jumbotron>
-      <SearchBooksForm />
-    </Container>
-    // <Container fluid>
-    //   <Row>
-    //     <Col size='md-12'>
-    //       <Jumbotron>
-    // <div>
-
-    // </div>
-    /* </Jumbotron>
+    <Container>
+      <Row>
+        <Col size='md-12'>
+          <Jumbotron>
+            <h1>Google Search Library</h1>
+          </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col size='md-12'>
           <SearchBooksForm />
         </Col>
       </Row>
-    </Container> */
+    </Container>
   );
 };
 

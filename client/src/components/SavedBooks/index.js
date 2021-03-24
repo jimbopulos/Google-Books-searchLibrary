@@ -22,7 +22,6 @@ function SavedBooks() {
     try {
       console.log(id);
       await API.deleteBook(id);
-      await loadSavedBooks();
     } catch (err) {
       console.log(err);
     }
@@ -50,7 +49,7 @@ function SavedBooks() {
                 </a>
                 <button
                   className='btn btn-outline-danger'
-                  onClick={(_id) => deleteBook(_id)}
+                  onClick={() => deleteBook(_id)}
                 >
                   Delete
                 </button>
