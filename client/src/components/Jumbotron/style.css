@@ -1,0 +1,11 @@
+.jumbotron {
+  margin-top: 5%;
+  border: 3px solid #fbbc06;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 6px 6px 2px black;
+  height: 200;
+  clear: both;
+  padding-top: 80;
+  text-align: center;
+}

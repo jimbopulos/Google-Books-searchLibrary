@@ -1,12 +1,13 @@
 import React from 'react';
+import './style.css';
 import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className='navbar navbar-expand-lg'>
       <ul className='navbar-nav'>
         <a className='navbar-brand' href='/'>
-          Google Books
+          <strong>Home</strong>
         </a>
         <li className='nav-item'>
           <Link to='/search' className='nav-link'>

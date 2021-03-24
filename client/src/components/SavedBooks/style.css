@@ -1,0 +1,35 @@
+h3 {
+  padding: 2%;
+}
+
+.title {
+  margin-bottom: 5%;
+  border: 3px solid #33a853;
+  border-radius: 2px;
+  box-shadow: 6px 6px 2px black;
+  margin-right: 60%;
+  text-align: center;
+}
+
+.card-img-top {
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  box-shadow: 5px 5px 5px black;
+}
+
+.btn-primary {
+  background-color: #4185f4;
+  border-color: #4185f4;
+}
+
+.btn-outline-danger {
+  margin-left: 1%;
+  color: #ea4335;
+  border-color: #ea4335;
+}
+
+.btn-outline-danger:hover {
+  color: white;
+  background-color: #ea4335;
+}

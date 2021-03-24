@@ -1,1 +1,45 @@
+.form-div {
+  margin-bottom: 5%;
+  border: 3px solid #33a853;
+  border-radius: 2px;
+  box-shadow: 6px 6px 2px black;
+}
 
+h3 {
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+form {
+  padding: 3%;
+  margin-bottom: 2%;
+}
+
+form > input {
+  margin-bottom: 2%;
+}
+
+.card {
+  margin-bottom: 4%;
+  border: 3px solid #ea4335;
+  border-radius: 2px;
+  box-shadow: 5px 5px 2px black;
+}
+
+.card-img-top {
+  display: block;
+  margin: auto;
+  width: 20%;
+  box-shadow: 5px 5px 5px black;
+}
+
+.btn-outline-success {
+  margin-left: 1%;
+  color: #33a853;
+  border-color: #33a853;
+}
+
+.btn-outline-success:hover {
+  color: white;
+  background-color: #33a853;
+}
