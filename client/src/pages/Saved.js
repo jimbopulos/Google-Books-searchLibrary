@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from '../components/Grid';
 import Jumbotron from '../components/Jumbotron';
+import SavedBooks from '../components/SavedBooks';
 
 const Saved = () => {
   return (
@@ -10,6 +11,11 @@ const Saved = () => {
           <Jumbotron>
             <h1>Saved Books</h1>
           </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col size='md-12'>
+          <SavedBooks />
         </Col>
       </Row>
     </Container>
