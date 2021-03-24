@@ -8,7 +8,7 @@ const Saved = () => {
       <Row>
         <Col size='md-12'>
           <Jumbotron>
-            <h1>This is the saved page, bloopy bloop</h1>
+            <h1>Saved Books</h1>
           </Jumbotron>
         </Col>
       </Row>

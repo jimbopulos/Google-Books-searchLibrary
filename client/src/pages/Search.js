@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <Container fluid>
       <Jumbotron>
-        <h1>This is the search page, woopty woop</h1>
+        <h1>Search Books</h1>
       </Jumbotron>
       <SearchBooksForm />
     </Container>

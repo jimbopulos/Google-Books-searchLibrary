@@ -25,19 +25,30 @@ function SearchBooksForm() {
         data: { items },
       } = await API.searchBooks(booksSearch);
       setBooks(items);
-      console.log();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const saveBook = async (bookObj) => {
+    try {
+      console.log(bookObj);
+      await API.saveBook(bookObj);
     } catch (err) {
       console.log(err);
     }
   };
 
   const getBooks = async () => {
-    const {
-      data: { items },
-    } = await API.searchBooks();
-
-    setBooks(items);
-    console.log(items);
+    try {
+      const {
+        data: { items },
+      } = await API.searchBooks();
+      setBooks(items);
+      console.log(items);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -60,10 +71,11 @@ function SearchBooksForm() {
       <div>
         {books.map(
           ({
+            id,
             volumeInfo: { title, authors, description, infoLink, imageLinks },
           }) => {
             return (
-              <div className='card'>
+              <div className='card' key={id}>
                 <img
                   src={imageLinks.thumbnail}
                   className='card-img-top'
@@ -75,13 +87,25 @@ function SearchBooksForm() {
                     {title} by {authors}
                   </h5>
                   <span>
-                    <button className='btn btn-outline-primary'>View</button>
-                    <button className='btn btn-outline-success'>Save</button>
+                    <a href={infoLink} className='btn btn-primary'>
+                      Find it in the Google Books store
+                    </a>
+                    <button
+                      className='btn btn-outline-success'
+                      onClick={() =>
+                        saveBook({
+                          title,
+                          authors,
+                          description,
+                          link: infoLink,
+                          image: imageLinks.thumbnail,
+                        })
+                      }
+                    >
+                      Save
+                    </button>
                   </span>
                   <p className='card-text'>{description}</p>
-                  <a href={infoLink} className='btn btn-primary'>
-                    Find it in the Google Books store
-                  </a>
                 </div>
               </div>
             );
