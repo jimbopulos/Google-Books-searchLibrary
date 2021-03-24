@@ -2,3 +2,27 @@ img {
   display: block;
   margin: auto;
 }
+
+.form-div {
+  margin-bottom: 5%;
+  border: 3px solid #33a853;
+  border-radius: 5px;
+}
+
+h3 {
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+form {
+  padding: 5%;
+  margin-bottom: 2%;
+}
+
+div > form > button {
+  float: right;
+}
+
+form > input {
+  margin-bottom: 1%;
+}

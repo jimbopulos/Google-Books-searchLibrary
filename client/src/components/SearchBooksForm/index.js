@@ -53,21 +53,24 @@ function SearchBooksForm() {
 
   return (
     <div>
-      <form className='form-inline'>
-        <input
-          type='text'
-          placeholder='Search for books'
-          className='form-control'
-          onChange={handleInputChange}
-        />
-        <button
-          type='submit'
-          className='btn btn-primary'
-          onClick={handleSubmit}
-        >
-          Search
-        </button>
-      </form>
+      <div className='form-div'>
+        <h3>Book Search</h3>
+        <form className='form'>
+          <input
+            type='text'
+            placeholder='Search for a book'
+            className='form-control'
+            onChange={handleInputChange}
+          />
+          <button
+            type='submit'
+            className='btn btn-primary'
+            onClick={handleSubmit}
+          >
+            Search
+          </button>
+        </form>
+      </div>
       <div className='book-cards'>
         {books.map(
           ({
