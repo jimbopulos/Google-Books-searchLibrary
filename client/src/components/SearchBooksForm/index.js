@@ -71,7 +71,7 @@ function SearchBooksForm() {
           </button>
         </form>
       </div>
-      <div className='book-cards'>
+      <div>
         {books.map(
           ({
             id,
@@ -83,15 +83,16 @@ function SearchBooksForm() {
                   src={imageLinks.thumbnail}
                   className='card-img-top'
                   alt={title}
-                  style={{ width: '20%' }}
+                  // style={{ width: '20%' }}
                 />
                 <div className='card-body'>
                   <h5 className='card-title'>
                     {title} by {authors}
                   </h5>
+                  <p className='card-text'>{description}</p>
                   <span>
                     <a href={infoLink} className='btn btn-primary'>
-                      Find it in the Google Books store
+                      View in Google Books store
                     </a>
                     <button
                       className='btn btn-outline-success'
@@ -108,7 +109,6 @@ function SearchBooksForm() {
                       Save
                     </button>
                   </span>
-                  <p className='card-text'>{description}</p>
                 </div>
               </div>
             );

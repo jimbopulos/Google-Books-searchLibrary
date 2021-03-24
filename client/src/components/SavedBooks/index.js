@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
+import './style.css';
 
 function SavedBooks() {
   const [savedBooks, setSavedBooks] = useState([]);
@@ -29,7 +30,9 @@ function SavedBooks() {
 
   return (
     <div>
-      <h3>Saved Books</h3>
+      <div className='title'>
+        <h3>Your Saved Books:</h3>
+      </div>
       {savedBooks.map(({ _id, authors, description, image, link, title }) => {
         return (
           <div className='card' key={_id}>
@@ -43,9 +46,10 @@ function SavedBooks() {
               <h5 className='card-title'>
                 {title} by {authors}
               </h5>
+              <p className='card-text'>{description}</p>
               <span>
                 <a href={link} className='btn btn-primary'>
-                  Find it in the Google Books store
+                  View in Google Books store
                 </a>
                 <button
                   className='btn btn-outline-danger'
@@ -54,7 +58,6 @@ function SavedBooks() {
                   Delete
                 </button>
               </span>
-              <p className='card-text'>{description}</p>
             </div>
           </div>
         );
