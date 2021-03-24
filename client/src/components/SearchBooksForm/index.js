@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 // import { useStoreContext } from '../../utils/GlobalState';
 import API from '../../utils/API';
-// import { Input, FormBtn } from '../Form/index';
+import './style.css';
 
 function SearchBooksForm() {
   const [books, setBooks] = useState([]);
@@ -68,7 +68,7 @@ function SearchBooksForm() {
           Search
         </button>
       </form>
-      <div>
+      <div className='book-cards'>
         {books.map(
           ({
             id,
