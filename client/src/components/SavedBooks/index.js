@@ -37,12 +37,7 @@ function SavedBooks() {
       {savedBooks.map(({ _id, authors, description, image, link, title }) => {
         return (
           <div className="card" key={_id}>
-            <img
-              src={image}
-              className="card-img-top"
-              alt={title}
-              // style={{ width: "20%" }}
-            />
+            <img src={image} className="card-img-top" alt={title} />
             <div className="card-body">
               <h5 className="card-title">
                 {title} by {authors}

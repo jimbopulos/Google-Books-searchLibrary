@@ -11,12 +11,12 @@ h3 {
   text-align: center;
 }
 
-.card-img-top {
+/* .card-img-top {
   display: block;
   margin: auto;
   margin-top: 2%;
   box-shadow: 5px 5px 5px black;
-}
+} */
 
 .btn-primary {
   background-color: #4185f4;
