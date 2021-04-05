@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   searchBooks: function (userInput) {
@@ -7,15 +7,15 @@ export default {
     );
   },
   getBooks: function () {
-    return axios.get('/api/books');
+    return axios.get("/api/books");
   },
   getSavedBooks: function () {
-    return axios.get('/api/books');
+    return axios.get("/api/books");
   },
   deleteBook: function (id) {
-    return axios.delete('/api/book/' + id);
+    return axios.delete("/api/books/" + id);
   },
   saveBook: function (bookData) {
-    return axios.post('/api/books', bookData);
+    return axios.post("/api/books", bookData);
   },
 };
