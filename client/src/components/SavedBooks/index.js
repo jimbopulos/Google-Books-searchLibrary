@@ -26,7 +26,6 @@ function SavedBooks() {
     } catch (err) {
       console.log(err);
     }
-
     await loadSavedBooks();
   };
 
@@ -55,7 +54,10 @@ function SavedBooks() {
                 </a>
                 <button
                   className="btn btn-outline-danger"
-                  onClick={() => deleteBook(_id)}
+                  onClick={() => {
+                    deleteBook(_id);
+                    alert(`${title} deleted!`);
+                  }}
                 >
                   Delete
                 </button>
