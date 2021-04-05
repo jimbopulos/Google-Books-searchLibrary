@@ -13,10 +13,16 @@ h3 {
 form {
   padding: 3%;
   margin-bottom: 2%;
+  margin-left: 2%;
 }
 
 form > input {
   margin-bottom: 2%;
+  width: 90% !important;
+}
+
+.btn.btn-primary.search-btn {
+  margin-top: 1%;
 }
 
 .card {

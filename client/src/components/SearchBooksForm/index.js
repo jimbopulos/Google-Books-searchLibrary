@@ -64,7 +64,7 @@ function SearchBooksForm() {
           />
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary search-btn"
             onClick={handleSubmit}
           >
             Submit
