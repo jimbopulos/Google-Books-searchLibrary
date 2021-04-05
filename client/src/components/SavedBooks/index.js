@@ -32,7 +32,7 @@ function SavedBooks() {
   return (
     <div>
       <div className="title">
-        <h3>Your Saved Books:</h3>
+        <h3>Your Saved Books</h3>
       </div>
       {savedBooks.map(({ _id, authors, description, image, link, title }) => {
         return (

@@ -80,11 +80,19 @@ function SearchBooksForm() {
             }) => {
               return (
                 <div className="card" key={id}>
-                  <img
-                    src={imageLinks.thumbnail}
-                    className="card-img-top"
-                    alt={title}
-                  />
+                  {!imageLinks ? (
+                    <img
+                      src="https://i.pinimg.com/originals/61/c6/c8/61c6c8d08217e513c47518b6895335a4.png"
+                      className="card-img-top"
+                      alt={title}
+                    />
+                  ) : (
+                    <img
+                      src={imageLinks.thumbnail}
+                      className="card-img-top"
+                      alt={title}
+                    />
+                  )}
                   <div className="card-body">
                     <h5 className="card-title">
                       {title} by {authors}
@@ -96,15 +104,16 @@ function SearchBooksForm() {
                       </a>
                       <button
                         className="btn btn-outline-success"
-                        onClick={() =>
+                        onClick={() => {
                           saveBook({
                             title,
                             authors,
                             description,
                             link: infoLink,
                             image: imageLinks.thumbnail,
-                          })
-                        }
+                          });
+                          alert(`${title} saved to your library!`);
+                        }}
                       >
                         Save
                       </button>
