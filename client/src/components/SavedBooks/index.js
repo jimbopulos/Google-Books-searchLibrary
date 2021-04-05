@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import API from '../../utils/API';
-import './style.css';
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
+import "./style.css";
 
 function SavedBooks() {
   const [savedBooks, setSavedBooks] = useState([]);
@@ -13,7 +13,7 @@ function SavedBooks() {
     try {
       const { data } = await API.getSavedBooks();
       setSavedBooks(data);
-      console.log('saved: ', data);
+      console.log("saved: ", data);
     } catch (err) {
       console.log(err);
     }
@@ -26,34 +26,38 @@ function SavedBooks() {
     } catch (err) {
       console.log(err);
     }
+    await loadSavedBooks();
   };
 
   return (
     <div>
-      <div className='title'>
-        <h3>Your Saved Books:</h3>
+      <div className="title">
+        <h3>Your Saved Books</h3>
       </div>
       {savedBooks.map(({ _id, authors, description, image, link, title }) => {
         return (
-          <div className='card' key={_id}>
+          <div className="card" key={_id}>
             <img
               src={image}
-              className='card-img-top'
+              className="card-img-top"
               alt={title}
-              style={{ width: '20%' }}
+              style={{ width: "20%" }}
             />
-            <div className='card-body'>
-              <h5 className='card-title'>
+            <div className="card-body">
+              <h5 className="card-title">
                 {title} by {authors}
               </h5>
-              <p className='card-text'>{description}</p>
+              <p className="card-text">{description}</p>
               <span>
-                <a href={link} className='btn btn-primary'>
+                <a href={link} className="btn btn-primary">
                   View in Google Books store
                 </a>
                 <button
-                  className='btn btn-outline-danger'
-                  onClick={() => deleteBook(_id)}
+                  className="btn btn-outline-danger"
+                  onClick={() => {
+                    deleteBook(_id);
+                    alert(`${title} deleted!`);
+                  }}
                 >
                   Delete
                 </button>
