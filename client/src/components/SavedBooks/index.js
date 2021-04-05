@@ -41,7 +41,7 @@ function SavedBooks() {
               src={image}
               className="card-img-top"
               alt={title}
-              style={{ width: "20%" }}
+              // style={{ width: "20%" }}
             />
             <div className="card-body">
               <h5 className="card-title">
